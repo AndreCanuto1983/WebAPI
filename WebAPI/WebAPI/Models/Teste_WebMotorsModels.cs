@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace WebAPI.Models
 {
     [Table("tb_AnuncioWebmotors")]
-    public class Teste_WebMotorsModels
+    public class Teste_WebMotorsModels : ModelBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
