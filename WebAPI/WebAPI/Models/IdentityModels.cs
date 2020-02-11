@@ -34,7 +34,7 @@ namespace Teste.Models
 
         #region [ DBSet Core]
 
-        public DbSet<Teste_WebMotorsModels> AnuncioWebmotors { get; set; }
+        public DbSet<Teste_WebMotorsModel> AnuncioWebmotors { get; set; }
 
         #endregion
 
@@ -52,7 +52,7 @@ namespace Teste.Models
             modelBuilder.Conventions.Remove<DecimalPropertyConvention>();
             modelBuilder.Conventions.Add(new DecimalPropertyConvention(18, 4));
 
-            modelBuilder.Entity<Teste_WebMotorsModels>()
+            modelBuilder.Entity<Teste_WebMotorsModel>()
             .Property(w => w.observacao)
             .HasColumnType("text");
         }

@@ -1,37 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
+using WebAPI.FrontModels;
+using WebAPI.Models;
+using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/Make")]
+    [RoutePrefix("api/Vehicle")]
     public class VehiclesController : ApiController
     {
         #region Controller for CRUD Vehicles
 
-        // POST api/V1/Usuario/Registrar
+        // POST api/Vehicle/CudVehicle
         [AllowAnonymous]
         [HttpPost]
-        [Route("CrudMake")]
-        public async Task<IHttpActionResult> CrudMake([FromBody]RegisterUserModel model)
+        [Route("CudVehicle")]
+        public async Task<IHttpActionResult> CudVehicle([FromBody]VehicleFrontModel model)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
             try
             {
-                //User xiUser = null;
+                Teste_WebMotorsModel teste_WebModetorModel = null;
 
-                //using (UserService userService = new UserService(Context))
-                //    xiUser = await userService.RegisterUserAsync(model);
-
-                ////generate access token response
-                //var accessTokenResponse = GenerateLocalAccessTokenResponse(xiUser.Email);
-
-                return Ok("");
+                VehicleService vehicleService = new VehicleService();
+                await vehicleService.CudVehicle(model);
+              
+                return Ok("ok");
             }
             catch (Exception ex)
             {
@@ -43,11 +40,11 @@ namespace WebAPI.Controllers
 
         #region Controller for GET Vehicles
 
-        // GET api/V1/Usuario/ValidateTokenResetPassword
+        // GET api/Vehicle/CudVehicle/GetVehicle
         [AllowAnonymous]
         [HttpGet]
-        [Route("GetMake")]
-        public async Task<IHttpActionResult> GetMake(string token)
+        [Route("GetVehicle")]
+        public async Task<IHttpActionResult> GetVehicle(string token)
         {
             try
             {

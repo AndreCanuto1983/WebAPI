@@ -8,7 +8,7 @@ namespace WebAPI.Services
 {
     public class CrudBaseService<TContext, TEntity, ObjParams> : IDisposable
         where TContext : DbContext
-        where TEntity : ModelBase
+        where TEntity : DbModelBuilder/*ModelBase*/
     {
         #region Construtores
 
@@ -60,7 +60,7 @@ namespace WebAPI.Services
         {
             try
             {
-                entity.UpdateDate = DateTime.UtcNow.ToLocalTime();
+                //entity.UpdateDate = DateTime.UtcNow.ToLocalTime();
                 Context.Entry(entity).State = EntityState.Modified;
                 await Context.SaveChangesAsync();
                 return entity;
