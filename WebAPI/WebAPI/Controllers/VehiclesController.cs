@@ -4,6 +4,7 @@ using System.Web.Http;
 using WebAPI.FrontModels;
 using WebAPI.Models;
 using WebAPI.Services;
+using WebAPI.Services.Extensions;
 
 namespace WebAPI.Controllers
 {
@@ -23,10 +24,12 @@ namespace WebAPI.Controllers
 
             try
             {
-                Teste_WebMotorsModel teste_WebModetorModel = null;
+                var entity = model.Front2Entity();
+
+                VehicleModel vehicle = null;
 
                 VehicleService vehicleService = new VehicleService();
-                await vehicleService.CudVehicle(model);
+                vehicle = await vehicleService.CudVehicle(entity);
               
                 return Ok("ok");
             }

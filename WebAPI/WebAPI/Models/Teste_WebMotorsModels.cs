@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace WebAPI.Models
 {
     [Table("tb_AnuncioWebmotors")]
-    public class Teste_WebMotorsModel : ModelBase
+    public class VehicleModel : ModelBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [Required]
         [MaxLength(45)]

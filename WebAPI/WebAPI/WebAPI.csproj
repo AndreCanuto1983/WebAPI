@@ -231,6 +231,7 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Services\CrudBaseService.cs" />
+    <Compile Include="Services\Extensions\VehicleExtension.cs" />
     <Compile Include="Services\VehicleService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
