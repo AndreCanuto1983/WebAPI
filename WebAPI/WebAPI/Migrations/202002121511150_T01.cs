@@ -3,27 +3,10 @@ namespace WebAPI.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class A01 : DbMigration
+    public partial class T01 : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.tb_AnuncioWebmotors",
-                c => new
-                    {
-                        id = c.Int(nullable: false, identity: true),
-                        marca = c.String(nullable: false, maxLength: 45),
-                        modelo = c.String(nullable: false, maxLength: 45),
-                        versao = c.String(nullable: false, maxLength: 45),
-                        ano = c.Int(nullable: false),
-                        quilometragem = c.Int(nullable: false),
-                        observacao = c.String(nullable: false, unicode: false, storeType: "text"),
-                        CreationDate = c.DateTime(nullable: false),
-                        UpdateDate = c.DateTime(nullable: false),
-                        IsDeleted = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.id);
-            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -92,6 +75,23 @@ namespace WebAPI.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
             
+            CreateTable(
+                "dbo.Vehicle",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        marca = c.String(nullable: false, maxLength: 45),
+                        modelo = c.String(nullable: false, maxLength: 45),
+                        versao = c.String(nullable: false, maxLength: 45),
+                        ano = c.Int(nullable: false),
+                        quilometragem = c.Int(nullable: false),
+                        observacao = c.String(nullable: false, unicode: false, storeType: "text"),
+                        CreationDate = c.DateTime(nullable: false),
+                        UpdateDate = c.DateTime(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.id);
+            
         }
         
         public override void Down()
@@ -106,12 +106,12 @@ namespace WebAPI.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropTable("dbo.Vehicle");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.tb_AnuncioWebmotors");
         }
     }
 }

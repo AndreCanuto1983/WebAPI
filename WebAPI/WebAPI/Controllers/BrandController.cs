@@ -11,21 +11,22 @@ using WebAPI.Services.Extensions;
 namespace WebAPI.Controllers
 {
     [Authorize]
-    [RoutePrefix("api/Model")]
-    public class ModelController : ApiController
+    [RoutePrefix("api/Brand")]
+    public class BrandController : ApiController
     {
-        #region Controller for GET Model
+        #region Controller for GET Brand
 
         /// <summary>
-        /// GET api/Model/GetModel
+        /// GET api/Brand/GetBrand
+        /// Não entendi o contexto do nome "Brand" mais vou seguir o padrão de vocês
         /// Se quiser validar o usuário para get, comente o "[AllowAnonymous]" abaixo
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet]
-        [Route("GetModel")]
-        public async Task<IHttpActionResult> GetModel([FromUri]int id)
+        [Route("GetBrand")]
+        public async Task<IHttpActionResult> GetBrand([FromUri]int id)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
@@ -33,7 +34,7 @@ namespace WebAPI.Controllers
             {
                 VehicleService vehicleService = new VehicleService();
                 IEnumerable<VehicleModels> vehicle = await vehicleService.GetVehicle(id);
-                return Ok(vehicle.Select(v => v.ModelEntity2Front()));
+                return Ok(vehicle.Select(v => v.BrandEntity2Front()));
             }
             catch (CustomErrorException ex)
             {

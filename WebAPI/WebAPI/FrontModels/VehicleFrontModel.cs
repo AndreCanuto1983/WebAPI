@@ -32,6 +32,9 @@ namespace WebAPI.FrontModels
         public string observacao { get; set; }
     }
 
+    /// <summary>
+    /// Padronização de retorno para o front
+    /// </summary>
     public class GetOutVehicleFrontModel
     {
         public int id { get; set; }

@@ -3,13 +3,21 @@ using WebAPI.Models;
 
 namespace WebAPI.Services.Extensions
 {
+    /// <summary>
+    /// Extensions tem o objetivo de filtrar e exibir um modelo específico o que entra ou sai no controller 
+    /// </summary>
     public static class VehicleExtension
     {
         #region [ Front2Entity ]
 
-        public static VehicleModel Front2Entity(this VehicleFrontModel model)
+        /// <summary>
+        /// Formato de entrada do front para o back
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static VehicleModels VehicleFront2Entity(this VehicleFrontModel model)
         {
-            return new VehicleModel()
+            return new VehicleModels()
             {
                 id = model.id,
                 marca = model.marca,
@@ -25,7 +33,12 @@ namespace WebAPI.Services.Extensions
 
         #region [ Entity2Front ]
 
-        public static VehicleFrontModel Entity2Front(this VehicleModel model)
+        /// <summary>
+        /// Formato de saída do back para o front
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static VehicleFrontModel VehicleEntity2Front(this VehicleModels model)
         {
             return new VehicleFrontModel()
             {

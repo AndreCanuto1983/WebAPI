@@ -381,5 +381,5 @@ C:\WebM\WebAPI\WebAPI\bin\pt-br\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\WebM\WebAPI\WebAPI\bin\pt-br\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\WebM\WebAPI\WebAPI\bin\pt-br\System.Web.Http.Owin.resources.dll
 C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
-C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.Migrations.A01.resources
+C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.Migrations.T01.resources
 C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.GenerateResource.cache

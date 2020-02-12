@@ -34,9 +34,9 @@ namespace WebAPI.Controllers
 
             try
             {
-                var entity = model.Front2Entity();
+                var entity = model.VehicleFront2Entity();
 
-                VehicleModel vehicle = null;
+                VehicleModels vehicle = null;
 
                 VehicleService vehicleService = new VehicleService();
                 vehicle = await vehicleService.InsertOrUpdate(entity);
@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
 
                 using (var context = new Context())
                 {
-                    if (context.AnuncioWebmotors.AsNoTracking().Any(a => a.id == id))
+                    if (context.Vehicle.AsNoTracking().Any(a => a.id == id))
                     {
                         VehicleService vehicleService = new VehicleService();                        
                         return Ok(await vehicleService.DeleteVehicle(id));
@@ -118,8 +118,8 @@ namespace WebAPI.Controllers
             try
             {
                 VehicleService vehicleService = new VehicleService();
-                IEnumerable<VehicleModel> vehicle = await vehicleService.GetVehicle(id);
-                return Ok(vehicle);
+                IEnumerable<VehicleModels> vehicle = await vehicleService.GetVehicle(id);
+                return Ok(vehicle.Select(v => v.VehicleEntity2Front()));
             }
             catch (CustomErrorException ex)
             {

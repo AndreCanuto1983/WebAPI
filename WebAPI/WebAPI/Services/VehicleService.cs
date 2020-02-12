@@ -17,7 +17,7 @@ namespace WebAPI.Services
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<VehicleModel> InsertOrUpdate(VehicleModel entity)
+        public async Task<VehicleModels> InsertOrUpdate(VehicleModels entity)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace WebAPI.Services
             {
                 using (var context = new Context())
                 {
-                    VehicleModel vehicle = await context.AnuncioWebmotors.Where(a => a.id == id).FirstOrDefaultAsync();
+                    VehicleModels vehicle = await context.Vehicle.Where(a => a.id == id).FirstOrDefaultAsync();
                     context.Entry(vehicle).State = EntityState.Deleted;
                     await context.SaveChangesAsync();
                     return id;
@@ -71,22 +71,22 @@ namespace WebAPI.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<VehicleModel>> GetVehicle(int id)
+        public async Task<IEnumerable<VehicleModels>> GetVehicle(int id)
         {
             try
             {
                 using (var context = new Context())
                 {
-                    IEnumerable<VehicleModel> vehicle = null;
+                    IEnumerable<VehicleModels> vehicle = null;
                     if (id > 0)
                     {
                         //retorno o id encontrado
-                        vehicle = await context.AnuncioWebmotors.Where(a => a.id == id).ToListAsync();
+                        vehicle = await context.Vehicle.Where(a => a.id == id).ToListAsync();
                     }
                     else
                     {
                         //retorno uma lista de veículos
-                        vehicle = await context.AnuncioWebmotors.Where(a => a.id > 0).ToListAsync();
+                        vehicle = await context.Vehicle.Where(a => a.id > 0).ToListAsync();
                     }
                     return vehicle;
                 }

@@ -3,8 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAPI.Models
 {
-    [Table("tb_AnuncioWebmotors")]
-    public class VehicleModel : ModelBase
+    /// <summary>
+    /// Tabela que será criado no banco de dados
+    /// </summary>
+    [Table("Vehicle")]
+    public class VehicleModels : ModelBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

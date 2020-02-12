@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebAPI.Models
 {
+    /// <summary>
+    /// Esta classe tem o objetivo de inserir os campos padrões para saber a hora de criação etc
+    /// </summary>
     public abstract class ModelBase
     {
         #region [ Contructor ]
