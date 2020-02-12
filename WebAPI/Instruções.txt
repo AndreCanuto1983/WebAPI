@@ -1,5 +1,4 @@
-Olá pessoal tudo bem? 
-Vou deixar aqui uma breve descrição de como funciona o meu projeto do teste beleza.
+Olá pessoal tudo bem? Vou deixar aqui uma breve descrição de como funciona a WebAPI.
 
 - Abrir o projeto;
 

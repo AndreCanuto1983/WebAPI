@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "c5d50f18-9a10-44e2-bf33-79c68ad59e59",
+		"name": "Minha API Teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Vehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60412/api/Vehicle/GetVehicle?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Vehicle",
+						"GetVehicle"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "passe id = 0 para trazer tudo e id > 0 para específico"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Brand",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60412/api/Brand/GetBrand?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Brand",
+						"GetBrand"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "passe id = 0 para trazer tudo e id > 0 para específico"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Model",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60412/api/Model/GetModel?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Model",
+						"GetModel"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "passe id = 0 para trazer tudo e id > 0 para específico"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Version",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:60412/api/Version/GetVersion?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Version",
+						"GetVersion"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "passe id = 0 para trazer tudo e id > 0 para específico"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Vehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:60412/api/Vehicle/DeleteVehicle?id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Vehicle",
+						"DeleteVehicle"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert/Update Vehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "id = 0 grava,  e id > 0 atualiza os dados\n",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Volksvagen",
+							"type": "text"
+						},
+						{
+							"key": "modelo",
+							"value": "Golf",
+							"type": "text"
+						},
+						{
+							"key": "versao",
+							"value": "Gti 2.0 turbo",
+							"type": "text"
+						},
+						{
+							"key": "ano",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "quilometragem",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "observacao",
+							"value": "Completo, Ar, Vidro, Direção, Rodas Liga Leve",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:60412/api/Vehicle/IUVehicle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Vehicle",
+						"IUVehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Register",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Email",
+							"value": "andrecanuto@outlook.com",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "@Teste123",
+							"type": "text"
+						},
+						{
+							"key": "ConfirmPassword",
+							"value": "@Teste123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:60412/api/Account/Register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Account",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a39dd37b-02b0-4537-b33b-1ad2dd752a08",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"if(jsonData.access_token) {",
+							"    pm.globals.set(\"token\", jsonData.access_token);",
+							"    pm.globals.set(\"access_token\", jsonData.access_token);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "andrecanuto@outlook.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "@Teste123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:60412/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
