@@ -18,14 +18,15 @@ namespace WebAPI.Controllers
         #region Controller for CRUD Vehicles
 
         /// <summary>
-        /// POST api/Vehicle/CudVehicle
-        /// Este controller faz insert e update, se mandar id = 0 insert, senão update        
+        /// POST api/Vehicle/IUVehicle
+        /// Este controller faz insert e update, se mandar id = 0 insert, senão update       
+        /// Não utilizei o [HttpPut] para atualizar pois, desta maneira economizo código
         /// Se quiser que valida o usuário para gravar, comente o "[AllowAnonymous]" abaixo
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [AllowAnonymous]
-        [HttpPost]
+        [HttpPost]        
         [Route("IUVehicle")]
         public async Task<IHttpActionResult> IUVehicle([FromBody]VehicleFrontModel model)
         {
@@ -102,7 +103,7 @@ namespace WebAPI.Controllers
         #region Controller for GET Vehicles
 
         /// <summary>
-        /// GET api/Vehicle/CudVehicle/GetVehicle
+        /// GET api/Vehicle/GetVehicle
         /// Se quiser validar o usuário para get, comente o "[AllowAnonymous]" abaixo
         /// </summary>
         /// <param name="token"></param>

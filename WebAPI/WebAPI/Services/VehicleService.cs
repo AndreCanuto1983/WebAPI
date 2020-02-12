@@ -12,6 +12,11 @@ namespace WebAPI.Services
     {
         #region Insert/Update
 
+        /// <summary>
+        /// Service para inserir e atualizar
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public async Task<VehicleModel> InsertOrUpdate(VehicleModel entity)
         {
             try
@@ -33,6 +38,11 @@ namespace WebAPI.Services
 
         #region Delete
 
+        /// <summary>
+        /// Service para excluir
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<int> DeleteVehicle(int id)
         {
             try
@@ -55,6 +65,12 @@ namespace WebAPI.Services
 
         #region Get
 
+        /// <summary>
+        /// Service para buscar um Id específico ou uma lista
+        /// Passe id > 0 para buscar item específico e id = 0 para retornar uma lista
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<VehicleModel>> GetVehicle(int id)
         {
             try

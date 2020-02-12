@@ -1,0 +1,17 @@
+Olá pessoal tudo bem? 
+Eu não sei como funciona a estrutura de vocês, mais vou deixar aqui uma breve descrição de como funciona o meu projeto do teste beleza.
+
+- Abrir o projeto;
+- Alterar a string de conexão na web.config e inserir sua Instância/senha do sql 
+- Execute o projeto, criará o banco automaticamente;
+- Eu não tinha certeza se era para validar o usuário logado, então nos controllers, deixei [AllowAnonymous], dessa maneira não valida o token do usuário, se quiser que valide, apenas comente essa linha que será necessário cadastro de usuário e token.
+- Eu não entendi direito o pq da Api de consulta, eu usei apenas para visualizador a estrutura e os dados retornados. Me perdoe se o objetivo era outro.
+- Eu li que a tela não era obrigatória, então vou deixar um script do Postman que utilizei para testar e desenvolver.
+
+Quero agradecer imensamente pela oportunidade de fazer o teste. 
+Qualquer dúvida estou a disposição.
+
+Obrigadão pessoal!
+whatsApp (16)99615-3655
+email: andrecanuto@outlook.com.br
+
