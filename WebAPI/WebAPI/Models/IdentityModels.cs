@@ -30,33 +30,6 @@ namespace Teste.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
-        }
-
-        #region [ DBSet Core]
-
-        public DbSet<VehicleModel> AnuncioWebmotors { get; set; }
-
-        #endregion
-
-        #region Configuration
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-
-            //Desativa o esquema de cascata
-            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-
-            //Seta como padrão os decimais para 18,4
-            modelBuilder.Conventions.Remove<DecimalPropertyConvention>();
-            modelBuilder.Conventions.Add(new DecimalPropertyConvention(18, 4));
-
-            modelBuilder.Entity<VehicleModel>()
-            .Property(w => w.observacao)
-            .HasColumnType("text");
-        }
-
-        #endregion
+        }               
     }
 }

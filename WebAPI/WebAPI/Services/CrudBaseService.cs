@@ -6,9 +6,9 @@ using WebAPI.Models;
 
 namespace WebAPI.Services
 {
-    public class CrudBaseService<TContext, TEntity, ObjParams> : IDisposable
+    public class CrudBaseService<TContext, TEntity> : IDisposable
         where TContext : DbContext
-        where TEntity : DbModelBuilder/*ModelBase*/
+        where TEntity : ModelBase
     {
         #region Construtores
 
