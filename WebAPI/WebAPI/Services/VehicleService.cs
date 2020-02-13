@@ -36,6 +36,40 @@ namespace WebAPI.Services
 
         #endregion      
 
+        #region Partial Update
+
+        /// <summary>
+        /// Service para inserir e atualizar
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<VehicleModels> PartialUpdate(VehicleModels entity)
+        {
+            try
+            {
+                IEnumerable<VehicleModels> vehicleList = await GetVehicle(entity.id);
+                VehicleModels vehicle = vehicleList.Where(v => v.id == entity.id).FirstOrDefault();
+
+                vehicle.marca = entity.marca;
+                vehicle.modelo = entity.modelo;
+                vehicle.ano = entity.ano;
+                vehicle.UpdateDate = DateTime.UtcNow;
+
+                using (var context = new Context())
+                {
+                    context.Entry(vehicle).State = EntityState.Modified;
+                    await context.SaveChangesAsync();
+                    return entity;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new CustomErrorException("Error insert", ex);
+            }
+        }
+
+        #endregion      
+
         #region Delete
 
         /// <summary>

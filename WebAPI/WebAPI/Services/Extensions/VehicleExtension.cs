@@ -8,7 +8,7 @@ namespace WebAPI.Services.Extensions
     /// </summary>
     public static class VehicleExtension
     {
-        #region [ Front2Entity ]
+        #region [ VehicleFront2Entity ]
 
         /// <summary>
         /// Formato de entrada do front para o back
@@ -26,6 +26,26 @@ namespace WebAPI.Services.Extensions
                 ano = model.ano,
                 quilometragem = model.quilometragem,
                 observacao = model.observacao
+            };
+        }
+
+        #endregion
+
+        #region [ PartialVehicleFront2Entity ]
+
+        /// <summary>
+        /// Formato de entrada do front para o back
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static VehicleModels PartialVehicleFront2Entity(this PartialVehicleFrontModel model)
+        {
+            return new VehicleModels()
+            {
+                id = model.id,
+                modelo = model.modelo,
+                versao = model.versao,
+                ano = model.ano,
             };
         }
 

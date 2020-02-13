@@ -213,7 +213,7 @@
 			"response": []
 		},
 		{
-			"name": "Insert/Update Vehicle",
+			"name": "Insert Vehicle",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -240,7 +240,7 @@
 						{
 							"key": "id",
 							"value": "0",
-							"description": "id = 0 grava,  e id > 0 atualiza os dados\n",
+							"description": "id = 0 grava\n",
 							"type": "text"
 						},
 						{
@@ -276,7 +276,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:60412/api/Vehicle/IUVehicle",
+					"raw": "http://localhost:60412/api/Vehicle/InsertVehicle",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -285,7 +285,150 @@
 					"path": [
 						"api",
 						"Vehicle",
-						"IUVehicle"
+						"InsertVehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Vehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "id > 0 atualiza os dados\n",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Volksvagen",
+							"type": "text"
+						},
+						{
+							"key": "modelo",
+							"value": "Golf",
+							"type": "text"
+						},
+						{
+							"key": "versao",
+							"value": "Gti 2.0 turbo",
+							"type": "text"
+						},
+						{
+							"key": "ano",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "quilometragem",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "observacao",
+							"value": "Completo, Ar, Vidro, Direção, Rodas Liga Leve",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:60412/api/Vehicle/UpdateVehicle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Vehicle",
+						"UpdateVehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partial Update Vehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "id > 0 para atualizar os dados parcialmente",
+							"type": "text"
+						},
+						{
+							"key": "modelo",
+							"value": "Golf",
+							"type": "text"
+						},
+						{
+							"key": "versao",
+							"value": "Gti 2.0 turbo",
+							"type": "text"
+						},
+						{
+							"key": "ano",
+							"value": "2020",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:60412/api/Vehicle/UpdateVehicle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "60412",
+					"path": [
+						"api",
+						"Vehicle",
+						"UpdateVehicle"
 					]
 				}
 			},

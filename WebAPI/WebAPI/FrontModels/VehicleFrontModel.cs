@@ -33,6 +33,26 @@ namespace WebAPI.FrontModels
     }
 
     /// <summary>
+    /// Padronização para insert e update
+    /// </summary>
+    public class PartialVehicleFrontModel
+    {
+        //passe o id > 0
+        public int id { get; set; }
+               
+        [MaxLength(45)]
+        [Required(ErrorMessage = "O campo modelo é obrigatório")]
+        public string modelo { get; set; }
+
+        [MaxLength(45)]
+        [Required(ErrorMessage = "O campo versao é obrigatório")]
+        public string versao { get; set; }
+
+        [Required(ErrorMessage = "O campo ano é obrigatório")]
+        public int ano { get; set; }
+    }
+
+    /// <summary>
     /// Padronização de retorno para o front
     /// </summary>
     public class GetOutVehicleFrontModel
