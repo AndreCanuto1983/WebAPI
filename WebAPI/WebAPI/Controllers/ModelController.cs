@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet]
         [Route("GetModel")]
         public async Task<IHttpActionResult> GetModel([FromUri]int id)

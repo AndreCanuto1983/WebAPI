@@ -20,11 +20,11 @@ namespace WebAPI.Controllers
         /// <summary>
         /// POST api/Vehicle/InsertVehicle
         /// Este controller faz insert do veículo
-        /// Se quiser que valida o usuário para gravar, comente o "[AllowAnonymous]" abaixo
+        /// Se quiser que não valide o usuário/token, descomente o "[AllowAnonymous]" abaixo
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpPost]        
         [Route("InsertVehicle")]
         public async Task<IHttpActionResult> InsertVehicle([FromBody]VehicleFrontModel model)
@@ -61,11 +61,11 @@ namespace WebAPI.Controllers
         /// <summary>
         /// POST api/Vehicle/UpdateVehicle
         /// Este controller faz update do veículo       
-        /// Se quiser que valida o usuário para gravar, comente o "[AllowAnonymous]" abaixo
+        /// Se quiser que não valide o usuário/token, descomente o "[AllowAnonymous]" abaixo
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpPut]
         [Route("UpdateVehicle")]
         public async Task<IHttpActionResult> UpdateVehicle([FromBody]VehicleFrontModel model)
@@ -97,56 +97,15 @@ namespace WebAPI.Controllers
 
         #endregion
 
-        #region Controller for Partial Update Vehicles
-
-        /// <summary>
-        /// POST api/Vehicle/PartialUpdateVehicle
-        /// Este controller faz update parcial do veículo       
-        /// Se quiser que valida o usuário para gravar, comente o "[AllowAnonymous]" abaixo
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        [AllowAnonymous]
-        [HttpPatch]
-        [Route("PartialUpdateVehicle")]
-        public async Task<IHttpActionResult> PartialUpdateVehicle([FromBody]PartialVehicleFrontModel model)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            if (model.id <= 0) return Ok("Para inserir o registro, utilize o protocolo POST");
-
-            try
-            {
-                var entity = model.PartialVehicleFront2Entity();
-
-                VehicleModels vehicle = null;
-
-                VehicleService vehicleService = new VehicleService();
-                vehicle = await vehicleService.PartialUpdate(entity);
-
-                return Ok("ok");
-            }
-            catch (CustomErrorException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
-
-        #endregion
-
         #region Controller for Delete Vehicles
 
         /// <summary>
         /// POST api/Vehicle/DeleteVehicle     
-        /// Se quiser validar o usuário para deletar, comente o "[AllowAnonymous]" abaixo
+        /// Se quiser que não valide o usuário/token, descomente o "[AllowAnonymous]" abaixo
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpDelete]
         [Route("DeleteVehicle")]
         public async Task<IHttpActionResult> DeleteVehicle([FromUri]int id)
@@ -161,8 +120,9 @@ namespace WebAPI.Controllers
                 {
                     if (context.Vehicle.AsNoTracking().Any(a => a.id == id))
                     {
-                        VehicleService vehicleService = new VehicleService();                        
-                        return Ok(await vehicleService.DeleteVehicle(id));
+                        VehicleService vehicleService = new VehicleService();
+                        await vehicleService.DeleteVehicle(id);
+                        return Ok("ok");
                     }
                     else
                     {
@@ -186,11 +146,11 @@ namespace WebAPI.Controllers
 
         /// <summary>
         /// GET api/Vehicle/GetVehicle
-        /// Se quiser validar o usuário para get, comente o "[AllowAnonymous]" abaixo
+        /// Se quiser que não valide o usuário/token, descomente o "[AllowAnonymous]" abaixo
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet]
         [Route("GetVehicle")]
         public async Task<IHttpActionResult> GetVehicle([FromUri]int id)

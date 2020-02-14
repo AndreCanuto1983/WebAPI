@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
+using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -67,6 +68,8 @@ namespace Teste.Controllers
         }
 
         // POST api/Account/Logout
+        [HttpGet]
+        [AllowAnonymous]
         [Route("Logout")]
         public IHttpActionResult Logout()
         {

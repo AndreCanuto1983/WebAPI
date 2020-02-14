@@ -23,7 +23,7 @@ namespace WebAPI.Controllers
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet]
         [Route("GetBrand")]
         public async Task<IHttpActionResult> GetBrand([FromUri]int id)

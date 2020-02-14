@@ -254,10 +254,6 @@ C:\Users\AlCS\Desktop\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.ca
 C:\Users\AlCS\Desktop\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 C:\Users\AlCS\Desktop\WebAPI\WebAPI\obj\Debug\WebAPI.dll
 C:\Users\AlCS\Desktop\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
-C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache
-C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
-C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.dll
-C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
 C:\WebM\WebAPI\WebAPI\bin\WebAPI.dll.config
 C:\WebM\WebAPI\WebAPI\bin\WebAPI.dll
 C:\WebM\WebAPI\WebAPI\bin\WebAPI.pdb
@@ -380,6 +376,10 @@ C:\WebM\WebAPI\WebAPI\bin\pt-br\Microsoft.AspNet.Identity.Core.resources.dll
 C:\WebM\WebAPI\WebAPI\bin\pt-br\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\WebM\WebAPI\WebAPI\bin\pt-br\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\WebM\WebAPI\WebAPI\bin\pt-br\System.Web.Http.Owin.resources.dll
-C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.Migrations.T01.resources
 C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.GenerateResource.cache
+C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
+C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
+C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.dll
+C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
+C:\WebM\WebAPI\WebAPI\obj\Debug\WebAPI.csprojAssemblyReference.cache

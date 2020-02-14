@@ -191,7 +191,7 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:60412/api/Vehicle/DeleteVehicle?id=5",
+					"raw": "http://localhost:60412/api/Vehicle/DeleteVehicle?id=4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -205,7 +205,8 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "5"
+							"value": "4",
+							"description": "id do registro a ser excluído"
 						}
 					]
 				}
@@ -350,70 +351,6 @@
 						{
 							"key": "observacao",
 							"value": "Completo, Ar, Vidro, Direção, Rodas Liga Leve",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:60412/api/Vehicle/UpdateVehicle",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "60412",
-					"path": [
-						"api",
-						"Vehicle",
-						"UpdateVehicle"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Partial Update Vehicle",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{access_token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"type": "text",
-						"value": "application/x-www-form-urlencoded"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "id",
-							"value": "1",
-							"description": "id > 0 para atualizar os dados parcialmente",
-							"type": "text"
-						},
-						{
-							"key": "modelo",
-							"value": "Golf",
-							"type": "text"
-						},
-						{
-							"key": "versao",
-							"value": "Gti 2.0 turbo",
-							"type": "text"
-						},
-						{
-							"key": "ano",
-							"value": "2020",
 							"type": "text"
 						}
 					]
