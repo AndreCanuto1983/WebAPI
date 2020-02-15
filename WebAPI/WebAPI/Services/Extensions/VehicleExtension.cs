@@ -15,9 +15,9 @@ namespace WebAPI.Services.Extensions
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static VehicleModels VehicleFront2Entity(this VehicleFrontModel model)
+        public static VehicleModel VehicleFront2Entity(this VehicleFrontModel model)
         {
-            return new VehicleModels()
+            return new VehicleModel()
             {
                 id = model.id,
                 marca = model.marca,
@@ -38,9 +38,9 @@ namespace WebAPI.Services.Extensions
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static VehicleModels PartialVehicleFront2Entity(this PartialVehicleFrontModel model)
+        public static VehicleModel PartialVehicleFront2Entity(this PartialVehicleFrontModel model)
         {
-            return new VehicleModels()
+            return new VehicleModel()
             {
                 id = model.id,
                 modelo = model.modelo,
@@ -58,7 +58,7 @@ namespace WebAPI.Services.Extensions
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static VehicleFrontModel VehicleEntity2Front(this VehicleModels model)
+        public static VehicleFrontModel VehicleEntity2Front(this VehicleModel model)
         {
             return new VehicleFrontModel()
             {

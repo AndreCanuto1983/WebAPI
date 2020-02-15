@@ -12,7 +12,7 @@ namespace WebAPI.Services.Extensions
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static GetOutVersionFrontModel VersionEntity2Front(this VehicleModels model)
+        public static GetOutVersionFrontModel VersionEntity2Front(this VehicleModel model)
         {
             return new GetOutVersionFrontModel()
             {

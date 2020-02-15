@@ -208,6 +208,7 @@
     <Compile Include="Common\Exceptions\CustomErrorException.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\ConfigurationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -225,12 +226,12 @@
       <DependentUpon>202002121511150_T01.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="FrontModels\AccountBindingFrontModels.cs" />
+    <Compile Include="FrontModels\AccountViewFrontModels.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IdentityModel.cs" />
     <Compile Include="Models\ModelBase.cs" />
-    <Compile Include="Models\VehicleModels.cs" />
+    <Compile Include="Models\VehicleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

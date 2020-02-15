@@ -37,7 +37,7 @@ namespace WebAPI.Controllers
             {
                 var entity = model.VehicleFront2Entity();
 
-                VehicleModels vehicle = null;
+                VehicleModel vehicle = null;
 
                 VehicleService vehicleService = new VehicleService();
                 vehicle = await vehicleService.InsertOrUpdate(entity);
@@ -78,7 +78,7 @@ namespace WebAPI.Controllers
             {
                 var entity = model.VehicleFront2Entity();
 
-                VehicleModels vehicle = null;
+                VehicleModel vehicle = null;
 
                 VehicleService vehicleService = new VehicleService();
                 vehicle = await vehicleService.InsertOrUpdate(entity);
@@ -160,7 +160,7 @@ namespace WebAPI.Controllers
             try
             {
                 VehicleService vehicleService = new VehicleService();
-                IEnumerable<VehicleModels> vehicle = await vehicleService.GetVehicle(id);
+                IEnumerable<VehicleModel> vehicle = await vehicleService.GetVehicle(id);
                 return Ok(vehicle.Select(v => v.VehicleEntity2Front()));
             }
             catch (CustomErrorException ex)

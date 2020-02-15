@@ -17,7 +17,7 @@ namespace WebAPI.Services
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<VehicleModels> InsertOrUpdate(VehicleModels entity)
+        public async Task<VehicleModel> InsertOrUpdate(VehicleModel entity)
         {
             try
             {
@@ -43,12 +43,12 @@ namespace WebAPI.Services
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task<VehicleModels> PartialUpdate(VehicleModels entity)
+        public async Task<VehicleModel> PartialUpdate(VehicleModel entity)
         {
             try
             {
-                IEnumerable<VehicleModels> vehicleList = await GetVehicle(entity.id);
-                VehicleModels vehicle = vehicleList.Where(v => v.id == entity.id).FirstOrDefault();
+                IEnumerable<VehicleModel> vehicleList = await GetVehicle(entity.id);
+                VehicleModel vehicle = vehicleList.Where(v => v.id == entity.id).FirstOrDefault();
 
                 vehicle.marca = entity.marca;
                 vehicle.modelo = entity.modelo;
@@ -83,7 +83,7 @@ namespace WebAPI.Services
             {
                 using (var context = new Context())
                 {
-                    VehicleModels vehicle = await context.Vehicle.Where(a => a.id == id).FirstOrDefaultAsync();
+                    VehicleModel vehicle = await context.Vehicle.Where(a => a.id == id).FirstOrDefaultAsync();
                     context.Entry(vehicle).State = EntityState.Deleted;
                     await context.SaveChangesAsync();
                     return id;
@@ -105,13 +105,13 @@ namespace WebAPI.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<VehicleModels>> GetVehicle(int id)
+        public async Task<IEnumerable<VehicleModel>> GetVehicle(int id)
         {
             try
             {
                 using (var context = new Context())
                 {
-                    IEnumerable<VehicleModels> vehicle = null;
+                    IEnumerable<VehicleModel> vehicle = null;
                     if (id > 0)
                     {
                         //retorno o id encontrado

@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
             try
             {
                 VehicleService vehicleService = new VehicleService();
-                IEnumerable<VehicleModels> vehicle = await vehicleService.GetVehicle(id);
+                IEnumerable<VehicleModel> vehicle = await vehicleService.GetVehicle(id);
                 return Ok(vehicle.Select(v => v.BrandEntity2Front()));
             }
             catch (CustomErrorException ex)

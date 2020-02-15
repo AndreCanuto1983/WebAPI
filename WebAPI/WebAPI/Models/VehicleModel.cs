@@ -7,7 +7,7 @@ namespace WebAPI.Models
     /// Tabela que será criado no banco de dados
     /// </summary>
     [Table("Vehicle")]
-    public class VehicleModels : ModelBase
+    public class VehicleModel : ModelBase
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

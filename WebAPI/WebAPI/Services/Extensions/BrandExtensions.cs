@@ -12,7 +12,7 @@ namespace WebAPI.Services.Extensions
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static GetOutBrandFrontModel BrandEntity2Front(this VehicleModels model)
+        public static GetOutBrandFrontModel BrandEntity2Front(this VehicleModel model)
         {
             return new GetOutBrandFrontModel()
             {

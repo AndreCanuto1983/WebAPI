@@ -14,7 +14,7 @@ namespace WebAPI.Models
 
         #region [ DBSet Core]
 
-        public DbSet<VehicleModels> Vehicle { get; set; }
+        public DbSet<VehicleModel> Vehicle { get; set; }
 
         #endregion
 
@@ -28,7 +28,7 @@ namespace WebAPI.Models
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
-            modelBuilder.Entity<VehicleModels>()
+            modelBuilder.Entity<VehicleModel>()
             .Property(w => w.observacao)
             .HasColumnType("text");
         }
